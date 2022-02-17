@@ -13,6 +13,7 @@ Do not modify the main function.*/
 
 #include <iostream>
 
+// declaring a function
 long Factorial(int no);
 long nCr(int n, int r);
 
@@ -26,4 +27,20 @@ int main() {
   std::cout << nCr(n,r);
   std::cout << std::endl;
   return 0;
+}
+// function definition
+
+long Factorial(int n)
+{
+  int fac = 1;
+    for (int r=n; r >= 1; r--) 
+    {
+        fac = fac * r;
+    }
+  return fac;
+}
+
+long nCr(int n, int r)
+{
+  return Factorial(n) / (Factorial(r)*Factorial(n-r));
 }
